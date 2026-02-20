@@ -28,6 +28,7 @@ dependencies = [
     "osxphotos>=0.68",
     "Pillow>=10.0",
     "rich>=13.0",
+    "tomli>=2.0; python_version < '3.11'",
 ]
 
 [project.optional-dependencies]
@@ -78,6 +79,10 @@ warn_unused_configs = true
 
 [[tool.mypy.overrides]]
 module = "osxphotos.*"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "tomli"
 ignore_missing_imports = true
 
 [tool.pytest.ini_options]

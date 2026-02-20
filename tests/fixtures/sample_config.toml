@@ -1,0 +1,28 @@
+[general]
+repo_path = "/tmp/fake-repo"
+output_base = "src/assets/photos"
+output_pattern = "{category}/{album_slug}/{filename}"
+categories = ["eagles", "sailing", "pets"]
+
+[export]
+max_width = 2048
+format = "jpg"
+quality = 85
+strip_gps = true
+
+[git]
+auto_commit = true
+auto_push = false
+commit_message = "gallery: sync {count} photos from {albums}"
+
+[sync.albums."Eagles vs Cowboys 9-7-25"]
+category = "eagles"
+slug = "2025-09-07-cowboys"
+
+[sync.albums."Rhaegar"]
+category = "pets"
+slug = "rhaegar"
+
+[sync.patterns]
+"^Eagles.*" = "eagles"
+"^Sail.*" = "sailing"
